@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\Type;
 use App\Models\Project;
+use App\Http\Controllers\Controller;
 
 class TypeController extends Controller
 {

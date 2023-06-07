@@ -13,12 +13,14 @@
             </div>
         @endif
         <div class="text-capitalize fw-semibold">
-            <h1>{{ $project->title }}</h1>
-            <a href="{{ $project->git }}" class="btn btn-secondary my-4">See GIT!</a>
-            <p>Started : {{ $project->date }}</p>
-            <p>Type of framework and language used : <span
-                    class="text-warning text-uppercase">{{ $project->type ? $project->type->name : 'No Type' }}</span>
+            <h1>Type</h1>
+
+            <p>all project that use <span class="text-warning text-uppercase">{{ $type->name }}</span>
             </p>
+            @foreach ($projects as $project)
+                <p>{{ $project->title }}</p>
+            @endforeach
+
         </div>
 
 

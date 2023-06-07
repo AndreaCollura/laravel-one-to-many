@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-end">
-        <a href="{{ route('admin.projects.create') }}" class="btn btn-success h-50 mt-5 me-5">Create new post</a>
+        <a href="{{ route('admin.projects.create') }}" class="btn btn-secondary h-50 mt-5 me-5">Create new post</a>
     </div>
     <div class="container">
         @if (session()->has('message'))
@@ -13,31 +13,37 @@
         <table class="table">
             <thead>
                 <tr class="text-capitalize">
-                    <th class="d-none d-md-table-cell" scope="col">project title</th>
-                    <th class="text-start" scope="col">git</th>
-                    <th class="text-start" scope="col">date</th>
-                    <th class="text-start" scope="col">type</th>
-                    <th class="text-start" scope="col">repo name</th>
-                    <th class="text-start" scope="col">updated</th>
+                    <th class="d-none d-md-table-cell text-center" scope="col">project title</th>
+                    <th class="text-center" scope="col">git</th>
+                    <th class="text-center" scope="col">date</th>
+                    <th class="text-center" scope="col">type</th>
+                    <th class="text-center" scope="col">repo name</th>
+                    <th class="text-center" scope="col">updated</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($projects as $project)
-                    <tr>
+                    <tr class="text-center">
                         <td class="text-capitalize">{{ $project->title }}</td>
-                        <td><a href="{{ $project->git }}">{{ $project->git }}</a></td>
+                        <td><a class="text-danger-emphasis" href="{{ $project->git }}">{{ $project->git }}</a></td>
                         <td>{{ $project->date }}</td>
-                        <td>{{ $project->type ? $project->type->name : 'No Type' }}</td>
+                        <td class="text-uppercase">{{ $project->type ? $project->type->name : 'No Type' }}</td>
                         <td>{{ $project->slug }}</td>
                         <td>{{ $project->created_at }}</td>
-                        <td><a href="{{ route('admin.projects.show', $project->slug) }}"><i class="fa-solid fa-eye"></i></a>
-                            <a href="{{ route('admin.projects.edit', $project->slug) }}"><i
-                                    class="fa-solid fa-pencil"></i></a>
-                            <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
+                        <td class=" d-flex">
+                            <a href="{{ route('admin.projects.show', $project->slug) }}">
+                                <i class="fa-solid fa-eye text-black px-1"></i>
+                            </a>
+                            <a href="{{ route('admin.projects.edit', $project->slug) }}">
+                                <i class="fa-solid fa-pencil text-black px-1"></i>
+                            </a>
+                            <form class=" " action="{{ route('admin.projects.destroy', $project->slug) }}"
+                                method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type='submit' class="delete-button" data-item-title="{{ $project->title }}"> <i
-                                        class="fa-solid fa-trash"></i></button>
+                                <button type='submit' class="delete-button border-0 bg-transparent "
+                                    data-item-title="{{ $project->title }}">
+                                    <i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>

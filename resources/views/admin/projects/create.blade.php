@@ -4,7 +4,7 @@
 @section('content')
     <div class="container my-5">
         <div class="text-end">
-            <a href="{{ route('admin.projects.index') }}" class="btn btn-success h-50 mt-2 text-capitalize">Back to view
+            <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary h-50 mt-2 text-capitalize">Back to view
                 all</a>
         </div>
         <h2 class="text-capitalize mb-3">add new project</h2>

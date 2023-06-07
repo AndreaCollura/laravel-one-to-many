@@ -36,8 +36,8 @@
                                 </div>
                             </div>
                             <div class="card my-4">
-                                <div class="card-header">
-                                    <h2 class="text-uppercase fs-3 fw-semibold">..............</h2>
+                                <div class="card-header ">
+                                    <h2 class="text-uppercase fs-3 fw-semibold">.....</h2>
                                 </div>
                                 <div class="card-body">
                                     <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -92,7 +92,13 @@
                         <div class="col-12">
                             <div class="card my-4">
                                 <div class="card-header">
-                                    <h2 class="fs-3 fw-semibold">..............</h2>
+                                    <div class="d-flex justify-content-between">
+                                        <h2 class="fs-3 fw-semibold">Types</h2>
+                                        <a href="{{ route('admin.types.index') }}" class="btn btn-secondary">view
+                                            all</a>
+                                    </div>
+
+
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <div class="form-check">
