@@ -13,10 +13,10 @@
             </div>
         @endif
         <div class="text-capitalize fw-semibold">
-            <h1>Type</h1>
 
-            <p>all project that use <span class="text-warning text-uppercase">{{ $type->name }}</span>
-            </p>
+
+            <h3 class="mb-4">all project that use <span class="text-warning text-uppercase">{{ $type->name }}</span>
+            </h3>
             @foreach ($projects as $project)
                 <p>{{ $project->title }}</p>
             @endforeach
