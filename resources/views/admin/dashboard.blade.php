@@ -10,7 +10,7 @@
                             <div class="card my-4">
                                 <div class="card-header d-flex justify-content-between">
                                     <h2 class="fs-2 fw-semibold">Recent Projects</h2>
-                                    <a href="{{ route('admin.projects.index') }}" class="btn btn-tertiary">view all</a>
+                                    <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary">view all</a>
                                 </div>
                                 <div class="card-body">
                                     <table class="table table-hover">
